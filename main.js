@@ -4,7 +4,9 @@ display.disabled = true;
 display.value = '';
 
 function updateDisplay(value) {
-  display.value += value;
+  if (display.value.length < 15){ 
+    display.value += value
+  }
 }
 
 function clearDisplay() {
