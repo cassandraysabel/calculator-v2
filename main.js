@@ -19,11 +19,21 @@ function deleteLastChar() {
 }
 
 function calculate() {
+  if (display.value.match(/\/0/g)) {
+    display.value = 'Math Error';
+  } else {
+    try {
+      const result = eval(display.value);
+      display.value = result;
+    } catch (error) {
+      display.value = 'Math Error';
+    }
+  }
   try {
     const result = eval(display.value);
     display.value = result;
   } catch (error) {
-    display.value = 'Error';
+    display.value = 'Math Error';
   }
 }
 
